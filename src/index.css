@@ -2,104 +2,193 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Sushi House Design System - Premium Japanese Experience */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - Dark Theme Base */
+    --background: 15 15 15; /* Rich black */
+    --foreground: 350 10% 95%; /* Warm white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 20 20 20; /* Dark card */
+    --card-foreground: 350 10% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 25 25 25;
+    --popover-foreground: 350 10% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 100% 65%; /* Golden accent */
+    --primary-foreground: 15 15 15;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 8% 25%; /* Dark brown */
+    --secondary-foreground: 350 10% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 25 8% 20%;
+    --muted-foreground: 350 5% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 100% 65%; /* Golden */
+    --accent-foreground: 15 15 15;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 350 10% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 8% 25%;
+    --input: 30 8% 25%;
+    --ring: 45 100% 65%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sushi House Brand Colors */
+    --sushi-gold: 45 100% 65%;
+    --sushi-gold-light: 45 100% 75%;
+    --sushi-dark: 15 15 15;
+    --sushi-gray: 25 8% 20%;
+    --sushi-red: 0 70% 50%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--sushi-gold)), hsl(var(--sushi-gold-light)));
+    --gradient-dark: linear-gradient(180deg, hsl(var(--background)), hsl(var(--sushi-gray)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--sushi-dark) / 0.9), hsl(var(--sushi-gray) / 0.8));
+    
+    /* Shadows */
+    --shadow-gold: 0 10px 30px -10px hsl(var(--sushi-gold) / 0.3);
+    --shadow-card: 0 4px 20px hsl(var(--sushi-dark) / 0.5);
+    --shadow-premium: 0 20px 60px -10px hsl(var(--sushi-gold) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  /* Light Theme */
+  .light {
+    --background: 350 10% 98%; /* Warm white */
+    --foreground: 15 15 15;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 350 10% 100%;
+    --card-foreground: 15 15 15;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 350 10% 100%;
+    --popover-foreground: 15 15 15;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 45 100% 50%; /* Darker gold for light theme */
+    --primary-foreground: 350 10% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 45 20% 95%;
+    --secondary-foreground: 15 15 15;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 45 20% 95%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 350 10% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 350 10% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 45 20% 90%;
+    --input: 45 20% 90%;
+    --ring: 45 100% 50%;
+
+    /* Light theme overrides */
+    --sushi-gold: 45 100% 50%;
+    --sushi-dark: 350 10% 98%;
+    --sushi-gray: 45 20% 95%;
+    
+    --gradient-gold: linear-gradient(135deg, hsl(var(--sushi-gold)), hsl(45 100% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(var(--background)), hsl(var(--sushi-gray)));
+    --shadow-card: 0 4px 20px hsl(45 20% 80%);
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-tahoma;
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-sushi-gold {
+    @apply bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  .btn-sushi-outline {
+    @apply border-2 border-primary text-primary bg-transparent font-semibold px-6 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  .btn-sushi-ghost {
+    @apply text-primary hover:bg-primary/10 font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-[1.02];
+  }
+
+  /* Card Variants */
+  .card-sushi {
+    @apply bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  .card-premium {
+    @apply bg-gradient-to-br from-card to-card/80 border border-primary/20 rounded-xl p-6 shadow-2xl hover:shadow-premium transition-all duration-300 hover:scale-[1.02];
+  }
+
+  /* Menu Item Cards */
+  .menu-card {
+    @apply bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer;
+  }
+
+  /* Glassmorphism Effects */
+  .glass {
+    @apply backdrop-blur-md bg-background/20 border border-white/20;
+  }
+  
+  .glass-gold {
+    @apply backdrop-blur-md bg-primary/10 border border-primary/30;
+  }
+
+  /* Animations */
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+  
+  .animate-slide-right {
+    animation: slide-right 0.4s ease-out;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
