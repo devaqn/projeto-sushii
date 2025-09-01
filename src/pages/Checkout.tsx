@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { useCart } from '@/contexts/CartContext'
+import CheckoutButton from '@/components/CheckoutButton';
 
 const Checkout = () => {
   const navigate = useNavigate()
@@ -226,6 +227,16 @@ const Checkout = () => {
       </div>
     </main>
   )
+}
+
+export default function CheckoutPage() {
+  return (
+    <div>
+      <h1>Seu Carrinho</h1>
+      {/* Aqui já deve listar os itens do carrinho */}
+      <CheckoutButton />
+    </div>
+  );
 }
 
 export default Checkout
