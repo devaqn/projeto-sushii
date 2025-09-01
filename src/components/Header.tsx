@@ -29,7 +29,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-6 ml-8">
           <div className="flex items-center space-x-2 glass-luxury p-2 rounded-lg">
             <MapPin className="h-4 w-4 text-sushi-gold" />
-            <span className="font-medium text-foreground">São Paulo, SP</span>
+            <span className="font-medium text-foreground">Recife, PE</span>
           </div>
           <div className="flex items-center space-x-2 glass-appetite p-2 rounded-lg">
             <Clock className="h-4 w-4 text-sushi-emerald" />

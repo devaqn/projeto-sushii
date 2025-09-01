@@ -24,7 +24,7 @@ const Index = () => {
     {
       icon: <Truck className="h-10 w-10 text-sushi-red" />,
       title: "Frete Grátis",
-      description: "Pedidos acima de R$ 60,00 sem taxa de entrega para toda São Paulo",
+      description: "Pedidos acima de R$ 60,00 sem taxa de entrega para toda Recife",
       color: "appetite"
     },
     {
@@ -36,7 +36,7 @@ const Index = () => {
     {
       icon: <Award className="h-10 w-10 text-sushi-gold" />,
       title: "Premiado",
-      description: "Eleito melhor sushi de São Paulo por 3 anos consecutivos",
+      description: "Eleito melhor sushi de Recife por 3 anos consecutivos",
       color: "luxury"
     },
     {
@@ -235,7 +235,7 @@ const Index = () => {
                   Aberto Agora!
                 </h4>
                 <p className="text-muted-foreground mb-4">
-                  Fazendo entregas em toda São Paulo
+                  Fazendo entregas em todo Recife
                 </p>
                 <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
                   <Clock className="h-4 w-4" />

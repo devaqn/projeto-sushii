@@ -74,7 +74,7 @@ const Checkout = () => {
               </div>
               <div>
                 <Label htmlFor="city">Cidade</Label>
-                <Input id="city" value="São Paulo" disabled />
+                <Input id="city" value="Recife" disabled />
               </div>
             </div>
           </Card>
