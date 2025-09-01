@@ -71,6 +71,11 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			boxShadow: {
+				'premium': '0 20px 60px -10px hsl(var(--sushi-gold) / 0.2)',
+				'gold': '0 10px 30px -10px hsl(var(--sushi-gold) / 0.3)',
+				'card': '0 4px 20px hsl(var(--sushi-dark) / 0.5)'
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
