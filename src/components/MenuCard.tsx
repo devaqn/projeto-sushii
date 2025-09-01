@@ -13,6 +13,9 @@ interface MenuCardProps {
   image: string
   category: string
   className?: string
+  isNew?: boolean
+  isHot?: boolean
+  isPremium?: boolean
 }
 
 const MenuCard: React.FC<MenuCardProps> = ({
@@ -22,7 +25,10 @@ const MenuCard: React.FC<MenuCardProps> = ({
   price,
   image,
   category,
-  className = ''
+  className = '',
+  isNew,
+  isHot,
+  isPremium
 }) => {
   const { addItem } = useCart()
 
@@ -40,30 +46,45 @@ const MenuCard: React.FC<MenuCardProps> = ({
   }
 
   return (
-    <Card className={`menu-card ${className}`}>
-      <div className="aspect-square overflow-hidden">
+    <Card className={`menu-card-premium ${className}`}>
+      <div className="relative aspect-square overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-125"
         />
+        
+        {/* Badges */}
+        <div className="absolute top-3 left-3 flex flex-wrap gap-1">
+          {isNew && <span className="badge-new">Novo</span>}
+          {isHot && <span className="badge-hot">Popular</span>}
+          {isPremium && <span className="badge-premium">Premium</span>}
+        </div>
       </div>
       
-      <div className="p-4">
-        <h3 className="font-semibold text-lg text-foreground mb-1">{name}</h3>
-        <p className="text-muted-foreground text-sm mb-3 line-clamp-2">{description}</p>
+      <div className="p-5 relative z-10">
+        <h3 className="font-bold text-xl text-foreground mb-2 hover-appetite">
+          {name}
+        </h3>
+        <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-2">
+          {description}
+        </p>
         
         <div className="flex items-center justify-between">
-          <span className="text-xl font-bold text-primary">
-            R$ {price.toFixed(2).replace('.', ',')}
-          </span>
+          <div className="flex flex-col">
+            <span className="text-2xl font-bold text-primary hover-luxury">
+              R$ {price.toFixed(2).replace('.', ',')}
+            </span>
+            <span className="text-xs text-muted-foreground">
+              {category}
+            </span>
+          </div>
           
           <Button
             onClick={handleAddToCart}
-            size="sm"
-            className="btn-sushi-gold"
+            className="btn-appetite shadow-red-glow hover:shadow-gold-luxury transition-all duration-300"
           >
-            <Plus className="h-4 w-4 mr-1" />
+            <Plus className="h-4 w-4 mr-2" />
             Adicionar
           </Button>
         </div>

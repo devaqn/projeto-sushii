@@ -29,11 +29,18 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					hover: 'hsl(var(--secondary-hover))'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))',
+					hover: 'hsl(var(--accent-hover))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -43,10 +50,6 @@ export default {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
 				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -54,6 +57,15 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				// Cores Sushi Temáticas
+				sushi: {
+					red: 'hsl(var(--sushi-red))',
+					coral: 'hsl(var(--sushi-coral))',
+					gold: 'hsl(var(--sushi-gold))',
+					emerald: 'hsl(var(--sushi-emerald))',
+					navy: 'hsl(var(--sushi-navy))',
+					pearl: 'hsl(var(--sushi-pearl))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -71,10 +83,18 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-appetite': 'var(--gradient-appetite)',
+				'gradient-luxury': 'var(--gradient-luxury)',
+				'gradient-fresh': 'var(--gradient-fresh)',
+				'gradient-dark': 'var(--gradient-dark)',
+				'gradient-hero': 'var(--gradient-hero)'
+			},
 			boxShadow: {
-				'premium': '0 20px 60px -10px hsl(var(--sushi-gold) / 0.2)',
-				'gold': '0 10px 30px -10px hsl(var(--sushi-gold) / 0.3)',
-				'card': '0 4px 20px hsl(var(--sushi-dark) / 0.5)'
+				'red-glow': 'var(--shadow-red-glow)',
+				'gold-luxury': 'var(--shadow-gold-luxury)',
+				'emerald': 'var(--shadow-emerald)',
+				'depth': 'var(--shadow-depth)'
 			},
 			keyframes: {
 				'accordion-down': {
