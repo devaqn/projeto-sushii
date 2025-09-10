@@ -23,5 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-
-echo "# projeto-sushii" >> README.md git init git add . git commit -m "primeiro commit do repo" git branch -M main git remote add origin https://github.com/devaqn/projeto-sushii.git git push -u origin main
