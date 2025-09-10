@@ -1,9 +1,8 @@
-// Importar useNavigate ao invés de useHistory
-import { useNavigate } from 'react-router-dom'; 
+import React from 'react';
+import { useCart } from '../contexts/CartContext';
 
 const Cart = () => {
-  const { cartItems, updateQuantity, removeItem, closeCart } = useCart();
-  const navigate = useNavigate(); // Alteração aqui
+  const { cartItems, updateQuantity, removeItem } = useCart();
 
   const handleCheckout = async () => {
     try {
@@ -39,3 +38,5 @@ const Cart = () => {
     </div>
   );
 };
+
+export default Cart;  // Alteração aqui: exportação padrão
